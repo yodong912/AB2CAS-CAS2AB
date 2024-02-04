@@ -1,0 +1,16 @@
+Protocol CR;
+
+Knowledge
+A: pk(B);
+
+Actions
+[ac1] A -> B(N): aenc{N}pk(B)
+[ac2] B -> A : h(N)
+Goals
+[secret1] secrecy_of N [A,B];
+[secret2] secrecy_of N [A];
+[secret3] secrecy_of N [B];
+/*Authenticity*/
+[authNonInj1] A non-injectively authenticates B on N;
+[authInj1] A injectively authenticates B on N;
+end

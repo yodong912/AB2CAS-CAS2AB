@@ -1,0 +1,25 @@
+Protocol ASW: 
+
+Declarations:
+    Not defined;
+
+Knowledge: 
+    A : m,pk(B),B; 
+    B : pk(A),A; 
+    
+Actions: 
+    [asw1] A -> B(n_1) : aenc{pk(A).pk(B).m.h(n_1)}sk(A); 
+    [asw2] B -> A(n_2) : aenc{aenc{pk(A).pk(B).m.h(n_1)}sk(A).h(n_2)}sk(B); 
+    [asw3] A -> B : n_1; 
+    [asw4] B -> A : n_2; 
+        
+Goals: 
+    [secrecy] m secret of A,B; 
+
+/*Authenticity*/
+    [weakA] A non-injectively agrees with B on m; 
+    [weakB] B non-injectively agrees with A on m; 
+    [strongA] A injectively agrees with B on m; 
+    [strongB] B injectively agrees with A on m; 
+  
+end

@@ -1,0 +1,24 @@
+protocol NSPK3;
+
+identifiers
+A,B:user;
+Ni,Nr:number;
+PKB,PKA:public_key;
+
+messages
+1.  A -> B: {Ni,A}PKB
+2.  B -> A: {Ni,Nr,B}PKA
+3.  A -> B : {Nr}PKB
+knowledge
+    A: PKB,B;
+    B: PKA,A;
+
+session_instances
+ [A:a,B:b,Ni:c,Nr:d,PKB:e,PKA:f];
+
+intruder_knowledge
+ a,b,c,d,e,f;
+
+goal
+    secrecy_of Ni [A,B];
+    secrecy_of Nr [A,B];

@@ -1,0 +1,26 @@
+protocol TV;
+
+identifiers
+C,D : user;
+Ins : number;
+Kc,Kd : public_key;
+
+messages
+1.  D -> C : D,{Ins}Kd'
+2.  C -> D : C,{Ins}Kc'
+
+knowledge
+D : C,Kc,Kd;
+C : D,Kc,Kd;
+
+session_instances
+ [C:scard,D:tv,Kc:kc,Kd:kd]
+ [C:i,D:tv,Kc:ki,Kd:kd];
+
+intruder_knowledge
+ tv,scard,ki,ki',kc,kd;
+
+goal
+ secrecy_of Ins [C,D];
+/*Authenticity*/
+ D injectively authenticates C on Ins;

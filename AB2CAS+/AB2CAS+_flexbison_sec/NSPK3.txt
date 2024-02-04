@@ -1,0 +1,19 @@
+Protocol NSPK3:
+
+Declarations:
+   Not defined;
+
+Knowledge:
+    I: pk(R),R;
+    R: pk(I),I;
+
+Actions:
+    [ac1] I -> R(ni):aenc{'one',ni,I}pk(R);
+    [ac2] R -> I(nr):aenc{'two',ni,nr,R}pk(I);
+    [ac3] I -> R:aenc{'three',nr}pk(R);
+
+Goals:
+    [key_secret1] ni secret of I,R;
+    [key_secret2] nr secret of I,R;
+
+end

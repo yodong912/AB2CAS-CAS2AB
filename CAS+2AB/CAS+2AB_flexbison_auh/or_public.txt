@@ -1,0 +1,23 @@
+Protocol OTWAYREES;
+
+Knowledge
+A: k(A,S),B;
+B: k(B,S);
+S: k(A,S),k(B,S);
+
+Actions
+[ac1] A -> B(N1): i,A,B,aenc{n1,i,A,B}k(A,S)
+[ac2] B -> S(i): i,A,B,aenc{n1,i,A,B}k(A,S),
+[ac3] S -> B(N2): i,aenc{n1,Key}k(A,S),
+[ac4] B -> A(Key): i,aenc{n1,Key}k(A,S)
+
+
+Goals
+[secret1] secrecy_of Key [A,B];
+/*Authenticity*/
+[authInj0] A injectively authenticates B on Key;
+[authInj0] B injectively authenticates A on Key;
+
+
+
+end

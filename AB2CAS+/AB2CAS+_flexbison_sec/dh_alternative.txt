@@ -1,0 +1,19 @@
+Protocol DIFFIE_HELLMAN:
+
+Declarations:
+   Not defined;
+
+Knowledge:
+      dh : none;
+
+Actions:
+    [dh_1] A -> B(x) : 'g'^x;
+    [dh_2] B -> A(y) : 'g'^y;
+    [dh_3] A -> B(n) : senc{n}('g'^(x*y));
+    
+Goals:
+    [key_secret]  'g'^(x*y) secret of A,B; 
+    [key_secretA] 'g'^(x*y) secret of A;
+    [key_secretB] 'g'^(x*y) secret of B;
+    
+end

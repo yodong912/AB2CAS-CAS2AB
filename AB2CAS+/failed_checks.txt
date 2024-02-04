@@ -1,0 +1,11 @@
+protocol secrecy;
+declarations
+    public fun/-1;
+    private fun/2;
+knowledge
+    A: secr,pk(A),m;
+messages
+1.    A -> A(secr) : aenc{secr}pk(A)
+2.    A <- A : fun(secr)
+goal
+    secrecy_of bar(secr) [B];

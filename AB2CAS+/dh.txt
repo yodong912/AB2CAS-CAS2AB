@@ -1,0 +1,13 @@
+protocol DIFFIE_HELLMAN;
+declarations
+    g 0;
+knowledge
+    dh: none;
+messages
+1.    A - B(x) : g()^x
+2.    B - A(y) : g()^y
+3.    A - B(n) : senc{n}(g()^(xy))
+goal
+    secrecy_of g()^(xy) [A,B];
+    secrecy_of g()^(xy) [A];
+    secrecy_of g()^(xy) [B];

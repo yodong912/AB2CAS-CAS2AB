@@ -1,0 +1,16 @@
+Protocol TV;
+
+Knowledge
+D : C,Kc,Kd;
+C : D,Kc,Kd;
+
+Actions
+[ac1] D -> C : D.aenc{Ins}Kd'
+[ac2] C -> D : C.aenc{Ins}Kc'
+
+Goals
+[secret1] secrecy_of Ins [C,D];
+/*Authenticity*/
+[authInj1] D injectively authenticates C on Ins;
+
+end

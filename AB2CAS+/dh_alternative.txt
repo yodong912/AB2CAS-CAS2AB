@@ -1,0 +1,13 @@
+protocol DIFFIE_HELLMAN;
+declarations
+    Not defined;
+knowledge
+    dh: none;
+messages
+1.    A -> B(x) : 'g'^x
+2.    B -> A(y) : 'g'^y
+3.    A -> B(n) : senc{n}('g'^(x*y))
+goal
+    secrecy_of 'g'^(x*y) [A,B];
+    secrecy_of 'g'^(x*y) [A];
+    secrecy_of 'g'^(x*y) [B];

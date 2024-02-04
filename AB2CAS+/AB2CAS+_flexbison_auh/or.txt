@@ -1,0 +1,25 @@
+Protocol OTWAY_REES: 
+
+Declarations:
+    Not defined;
+
+Knowledge: 
+    A : k(A,S),B; 
+    B: k(B,S); 
+    S: k(A,S),k(B,S); 
+    
+Actions: 
+    [or1] A -> B(n1,i) : i.A.B.senc{n1.i.A.B}k(A,S); 
+    [or2] B -> S(n2) : i.A.B.senc{n1.i.A.B}k(A,S).senc{n2.i.A.B}k(B,S); 
+    [or3] S -> B(key) : i.senc{n1.key}k(A,S).senc{n2.key}k(B,S); 
+    [or4] B -> A : i.senc{n1.key}k(A,S); 
+        
+Goals: 
+    [secKey] key secret of A,B; 
+
+/*Authenticity*/
+    [agreeA] A injectively agrees with B on key; 
+    [agreeB] B injectively agrees with A on key; 
+
+end
+

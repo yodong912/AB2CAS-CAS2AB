@@ -1,0 +1,21 @@
+protocol DIFFIEHELLMAN;
+
+identifiers
+A,B:user;
+X,Y,N,G:number;
+
+messages
+1.  A - B: G^X
+2.  B - A: G^Y
+3.  A - B: {N}(G^(XY))
+
+session_instances
+ [A:a,B:b,X:c,Y:d,N:e,G:f];
+
+intruder_knowledge
+ a,b,c,d,e,f;
+
+goal
+    secrecy_of G^(XY) [A,B];
+    secrecy_of G^(XY) [A];
+    secrecy_of G^(XY) [B];

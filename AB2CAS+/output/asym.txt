@@ -1,0 +1,20 @@
+protocol Asym;
+
+identifiers
+A,B:user;
+N:number;
+PKA:public_key;
+
+messages
+1.  A -> B: {N}PKA'
+knowledge
+    B: PKA;
+
+session_instances
+ [A:a,B:b,N:c,PKA:d];
+
+intruder_knowledge
+ a,b,c,d;
+
+goal
+    secrecy_of N [A,B];

@@ -1,0 +1,21 @@
+protocol secrecy;
+
+identifiers
+A,B:user;
+Secr:number;
+PKA:public_key;
+
+messages
+1.  A -> A: {Secr}PKA
+2.  A <- A : fun(Secr)
+knowledge
+    A: Secr,PKA,m;
+
+session_instances
+ [A:a,B:b,Secr:c,PKA:d];
+
+intruder_knowledge
+ a,b,c,d;
+
+goal
+    secrecy_of bar(Secr) [B];

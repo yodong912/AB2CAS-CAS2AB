@@ -1,0 +1,14 @@
+Protocol TV;
+
+Knowledge
+D : C,K;
+C : K;
+
+Actions
+[ac1] D -> C : D.senc{Ins}K
+[ac2] C -> D : C.D.senc{Ins}K
+
+Goals
+/*Authenticity*/
+[authInj1] C injectively authenticates D on Ins;
+end

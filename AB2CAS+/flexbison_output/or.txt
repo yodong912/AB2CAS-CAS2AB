@@ -1,0 +1,17 @@
+Protocol OTWAY_REES;
+declarations
+    Not defined;
+knowledge
+    A: k(A,S),B;
+    B: k(B,S);
+    S: k(A,S),k(B,S);
+messages
+1.    A -> B(n1,i) : i.A.B.senc{n1.i.A.B}k(A,S)
+2.    B -> S(n2) : i.A.B.senc{n1.i.A.B}k(A,S).senc{n2.i.A.B}k(B,S)
+3.    S -> B(key) : i.senc{n1.key}k(A,S).senc{n2.key}k(B,S)
+4.    B -> A : i.senc{n1.key}k(A,S)
+goal
+    secrecy_of key [A,B];
+/*Authenticity*/
+    A injectively authenticates B on key;
+    B injectively authenticates A on key;

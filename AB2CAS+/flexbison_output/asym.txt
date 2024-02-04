@@ -1,0 +1,9 @@
+protocol Asym;
+declarations
+    Not defined;
+knowledge
+    B: pk(A);
+messages
+1.    A -> B(n) : aenc{n}sk(A)
+goal
+    secrecy_of n [A,B];

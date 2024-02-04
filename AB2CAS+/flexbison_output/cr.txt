@@ -1,0 +1,15 @@
+protocol CR;
+declarations
+    Not defined;
+knowledge
+    C: pk(R);
+messages
+1.    C -> R(n) : aenc{n}pk(R)
+2.    R -> C : h(n)
+goal
+    secrecy_of n [C,R];
+    secrecy_of n [C];
+    secrecy_of n [R];
+/*Authenticity*/
+    C non-injectively authenticates R on n;
+    C injectively authenticates R on n;

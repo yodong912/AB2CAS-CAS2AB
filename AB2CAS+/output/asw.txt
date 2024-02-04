@@ -1,0 +1,29 @@
+protocol ASW;
+
+identifiers
+A,B:user;
+N_1,N_2:number;
+PKA,PKB:public_key;
+
+messages
+1.  A -> B: {PKA,PKB,m,h(N_1)}PKA'
+2.  B -> A: {{PKA,PKB,m,h(N_1)}PKA',h(N_2)}PKB'
+3.  A -> B : N_1
+4.  B -> A : N_2
+knowledge
+    A: m,PKB,B;
+    B: PKA,A;
+
+session_instances
+ [A:a,B:b,N_1:c,N_2:d,PKA:e,PKB:f];
+
+intruder_knowledge
+ a,b,c,d,e,f;
+
+goal
+    secrecy_of m [A,B];
+/*Authenticity*/
+    A non-injectively authenticates B on m;
+    B non-injectively authenticates A on m;
+    A injectively authenticates B on m;
+    B injectively authenticates A on m;

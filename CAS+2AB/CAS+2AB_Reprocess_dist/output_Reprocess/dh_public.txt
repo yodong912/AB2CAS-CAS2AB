@@ -1,0 +1,10 @@
+Protocol DIFFIEHELLMAN:
+Actions:
+[ac1] A - B(X) : g()^X
+[ac2] B - A(Y) : g()^Y
+[ac3] A - B(N) : aenc{N}(g()^(XY))
+Goals:
+[secret1] g()^(XY) secret of A,B;
+[secret2] g()^(XY) secret of A;
+[secret3] g()^(XY) secret of B;
+end

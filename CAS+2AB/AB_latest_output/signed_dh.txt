@@ -1,0 +1,12 @@
+Protocol SIGNEDDIFFIEHELLMAN:
+Knowledge:
+    A: pk(B),B;
+    B: pk(A),A;
+Actions:
+[ac1] A -> B(X) : aenc{A,B,g()^X}sk(A)
+[ac2] B -> A(Y) : aenc{B,A,g()^Y}sk(B)
+Goals:
+[secret1] g()^(X*Y) secret of A,B;
+[secret2] g()^(X*Y) secret of A;
+[secret3] g()^(X*Y) secret of B;
+end

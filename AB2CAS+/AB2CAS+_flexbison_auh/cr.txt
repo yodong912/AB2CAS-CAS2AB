@@ -1,0 +1,22 @@
+Protocol CR: 
+
+Declarations:
+    Not defined;
+
+Knowledge: 
+    C : pk(R); 
+    
+Actions: 
+    [cr1] C -> R(n) : aenc{n}pk(R); 
+    [cr2] R -> C     : h(n); 
+    
+Goals: 
+    [n_secret]   n secret of C,R; 
+    [n_secretC] n secret of C;
+    [n_secretR] n secret of R;
+
+/*Authenticity*/
+    [authNonInj] C non-injectively agrees with R on n; 
+    [authInj]    C injectively agrees with R on n; 
+
+end

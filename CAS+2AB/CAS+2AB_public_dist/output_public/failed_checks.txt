@@ -1,0 +1,11 @@
+Protocol secrecy;
+
+Knowledge
+A: Secr,pk(A),m;
+
+Actions
+[ac1] A -> A(Secr): aenc{Secr}pk(A)
+[ac2] A <- A : fun(Secr)
+Goals
+[secret1] secrecy_of bar(Secr) [B];
+end

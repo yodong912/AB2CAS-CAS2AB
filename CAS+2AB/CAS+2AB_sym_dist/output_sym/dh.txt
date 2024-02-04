@@ -1,0 +1,14 @@
+Protocol DIFFIEHELLMAN;
+
+Knowledge
+not defined
+Actions
+[ac1] A - B(X): g()^X
+[ac2] B - A(Y): g()^Y
+[ac3] A - B(N): senc{N}(g()^(XY))
+
+Goals
+[secret1] secrecy_of g()^(XY) [A,B];
+[secret2] secrecy_of g()^(XY) [A];
+[secret3] secrecy_of g()^(XY) [B];
+end

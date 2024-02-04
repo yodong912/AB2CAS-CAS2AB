@@ -1,0 +1,12 @@
+protocol TV;
+declarations
+    Not defined;
+knowledge
+    D: C,K;
+    C: K;
+messages
+1.    D -> C : D.senc{Ins}K
+2.    C -> D : C.D.senc{Ins}K
+goal
+/*Authenticity*/
+    C injectively authenticates D on Ins;

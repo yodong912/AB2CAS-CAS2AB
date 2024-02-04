@@ -1,0 +1,14 @@
+Protocol CR:
+Knowledge:
+    A: pk(B);
+Actions:
+[ac1] A -> B(N) : aenc{N}pk(B)
+[ac2] B -> A : h(N)
+Goals:
+ [secret1] N secret of A,B;
+ [secret2] N secret of A;
+ [secret3] N secret of B;
+/*Authenticity*/
+ [authNonInj1] A non-injectively agrees with B on N;
+ [authInj1] A injectively agrees with B on N;
+end

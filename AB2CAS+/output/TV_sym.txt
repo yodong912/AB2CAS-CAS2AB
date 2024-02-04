@@ -1,0 +1,21 @@
+protocol TV;
+
+identifiers
+A,B:user;
+
+messages
+1.  A -> B : A,{Ins}K
+2.  B -> A : B,A,{Ins}K
+knowledge
+    A: B,K;
+    B: K;
+
+session_instances
+ [A:a,B:b,];
+
+intruder_knowledge
+ a,b,;
+
+goal
+/*Authenticity*/
+    B injectively authenticates A on Ins;

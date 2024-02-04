@@ -1,0 +1,16 @@
+Protocol SIGNEDDIFFIEHELLMAN;
+
+Knowledge
+A: pk(B),B;
+B: pk(A),A;
+
+Actions
+[ac1] A -> B(X): aenc{A.B.g()^X}sk(A)
+[ac2] B -> A(Y): aenc{B.A.g()^Y}sk(B)
+Goals
+[secret1] secrecy_of g()^(X*Y) [A,B];
+[secret2] secrecy_of g()^(X*Y) [A];
+[secret3] secrecy_of g()^(X*Y) [B];
+
+
+end

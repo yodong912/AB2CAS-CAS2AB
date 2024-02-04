@@ -1,0 +1,13 @@
+protocol NSPK3;
+declarations
+    Not defined;
+knowledge
+    I: pk(R),R;
+    R: pk(I),I;
+messages
+1.    I -> R(ni) : aenc{'one',ni,I}pk(R)
+2.    R -> I(nr) : aenc{'two',ni,nr,R}pk(I)
+3.    I -> R : aenc{'three',nr}pk(R)
+goal
+    secrecy_of ni [I,R];
+    secrecy_of nr [I,R];

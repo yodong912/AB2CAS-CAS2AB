@@ -1,0 +1,12 @@
+Protocol NSPK3:
+Knowledge:
+    A: pk(B),B;
+    B: pk(A),A;
+Actions:
+[ac1] A -> B(Ni) : aenc{Ni,A}pk(B)
+[ac2] B -> A(Nr) : aenc{Ni,Nr,B}pk(A)
+[ac3] A -> B : aenc{Nr}pk(B)
+Goals:
+[secret1] Ni secret of A,B;
+[secret2] Nr secret of A,B;
+end

@@ -1,0 +1,18 @@
+Protocol DIFFIEHELLMAN;
+
+Knowledge
+not defined;
+
+Actions
+[ac1] A -> B(X): g()^X
+[ac2] B -> A(Y): g()^Y
+[ac3] A -> B(N): aenc{N}(g()^(X*Y))
+
+
+
+Goals
+[secret1] secrecy_of g()^(X*Y) [A,B];
+[secret2] secrecy_of g()^(X*Y) [A];
+[secret3] secrecy_of g()^(X*Y) [B];
+
+end

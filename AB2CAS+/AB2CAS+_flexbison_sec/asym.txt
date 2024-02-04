@@ -1,0 +1,15 @@
+Protocol Asym: 
+
+Declarations:
+    Not defined;
+
+Knowledge: 
+    B: pk(A); 
+    
+Actions: 
+    [a1] A -> B(n) : aenc{n}sk(A);
+    
+Goals: 
+    [sec]  n secret of A,B; 
+    
+end

@@ -1,0 +1,12 @@
+Protocol DIFFIEHELLMAN:
+Knowledge:
+    not: defined;
+Actions:
+[ac1] A -> B(X) : g()^X
+[ac2] B -> A(Y) : g()^Y
+[ac3] A -> B(N) : senc{N}(g()^(X*Y))
+Goals:
+[secret1] g()^(X*Y) secret of A,B;
+[secret2] g()^(X*Y) secret of A;
+[secret3] g()^(X*Y) secret of B;
+end

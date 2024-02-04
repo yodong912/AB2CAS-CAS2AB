@@ -1,0 +1,8 @@
+Protocol Asym:
+Knowledge:
+    B: pk(A);
+Actions:
+[ac1] A -> B(N) : aenc{N}sk(A)
+Goals:
+[secret1] N secret of A,B;
+end

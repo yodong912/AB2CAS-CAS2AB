@@ -1,0 +1,19 @@
+Protocol DIFFIE_HELLMAN: 
+
+Declarations:
+    g 0;
+    
+Knowledge:
+      dh : none;
+
+Actions: 
+    [dh_1] A - B(x)  g()^x; 
+    [dh_2] B - A(y)  g()^y; 
+    [dh_3] A - B(n)  senc{n}(g()^(xy)); 
+    
+Goals: 
+    [key_secret]  g()^(xy) secret of A,B; 
+    [key_secretA] g()^(xy) secret of A;
+    [key_secretB] g()^(xy) secret of B;
+    
+end

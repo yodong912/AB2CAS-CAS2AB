@@ -1,0 +1,18 @@
+protocol ASW;
+declarations
+    Not defined;
+knowledge
+    A: m,pk(B),B;
+    B: pk(A),A;
+messages
+1.    A -> B(n_1) : aenc{pk(A).pk(B).m.h(n_1)}sk(A)
+2.    B -> A(n_2) : aenc{aenc{pk(A).pk(B).m.h(n_1)}sk(A).h(n_2)}sk(B)
+3.    A -> B : n_1
+4.    B -> A : n_2
+goal
+    secrecy_of m [A,B];
+/*Authenticity*/
+    A non-injectively authenticates B on m;
+    B non-injectively authenticates A on m;
+    A injectively authenticates B on m;
+    B injectively authenticates A on m;

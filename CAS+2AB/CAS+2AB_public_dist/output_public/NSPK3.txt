@@ -1,0 +1,14 @@
+Protocol NSPK3;
+
+Knowledge
+A: pk(B),B;
+B: pk(A),A;
+
+Actions
+[ac1] A -> B(Ni): aenc{Ni.A}pk(B)
+[ac2] B -> A(Nr): aenc{Ni.Nr.B}pk(A)
+[ac3] A -> B : aenc{Nr}pk(B)
+Goals
+[secret1] secrecy_of Ni [A,B];
+[secret2] secrecy_of Nr [A,B];
+end

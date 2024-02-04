@@ -1,0 +1,26 @@
+protocol CR;
+
+identifiers
+A,B:user;
+N:number;
+PKB:public_key;
+
+messages
+1.  A -> B: {N}PKB
+2.  B -> A : h(N)
+knowledge
+    A: PKB;
+
+session_instances
+ [A:a,B:b,N:c,PKB:d];
+
+intruder_knowledge
+ a,b,c,d;
+
+goal
+    secrecy_of N [A,B];
+    secrecy_of N [A];
+    secrecy_of N [B];
+/*Authenticity*/
+    A non-injectively authenticates B on N;
+    A injectively authenticates B on N;

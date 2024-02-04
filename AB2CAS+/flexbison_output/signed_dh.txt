@@ -1,0 +1,13 @@
+protocol SIGNED_DIFFIE_HELLMAN;
+declarations
+    g /0;
+knowledge
+    A: pk(B),B;
+    B: pk(A),A;
+messages
+1.    A -> B(x) : aenc{'One'.A.B.g()^x}sk(A)
+2.    B -> A(y) : aenc{'Two'.B.A.g()^y}sk(B)
+goal
+    secrecy_of g()^(x*y) [A,B];
+    secrecy_of g()^(x*y) [A];
+    secrecy_of g()^(x*y) [B];

@@ -1,0 +1,10 @@
+Protocol Asym;
+
+Knowledge
+B: pk(A);
+
+Actions
+[ac1] A -> B(N): senc{N}sk(A)
+Goals
+[secret1] secrecy_of N [A,B];
+end

@@ -1,0 +1,27 @@
+protocol OTWAYREES;
+
+identifiers
+A,B:user;
+N1,i,N2,Key:number;
+
+messages
+1.  A -> B: i,A,B,{n1,i,A,B}k(A,S)
+2.  B -> S: i,A,B,{n1,i,A,B}k(A,S),{N2,i,A,B}k(B,S)
+3.  S -> B: i,{n1,Key}k(A,S),{N2,Key}k(B,S)
+4.  B -> A: i,{n1,Key}k(A,S)
+knowledge
+    A: k(A,S),B;
+    B: k(B,S);
+    S: k(A,S),k(B,S);
+
+session_instances
+ [A:a,B:b,N1,i:c,N2:d,Key:e];
+
+intruder_knowledge
+ a,b,c,d,e;
+
+goal
+    secrecy_of Key [A,B];
+/*Authenticity*/
+    A injectively authenticates B on Key;
+    B injectively authenticates A on Key;

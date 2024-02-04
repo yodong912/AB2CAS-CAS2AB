@@ -1,0 +1,13 @@
+protocol TV;
+declarations
+    Not defined;
+knowledge
+    D: C,Kc,Kd;
+    C: D,Kc,Kd;
+messages
+1.    D -> C : D.aenc{Ins}Kd'
+2.    C -> D : C.aenc{Ins}Kc'
+goal
+    secrecy_of Ins [C,D];
+/*Authenticity*/
+    D injectively authenticates C on Ins;
