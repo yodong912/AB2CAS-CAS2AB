@@ -1,0 +1,25 @@
+protocol DIFFIEHELLMAN;
+
+identifiers
+A,B 		: user;
+X,Y,N,G		: number;
+
+messages
+1. A -> B 	: G^X
+2. B -> A	: G^Y
+3. A -> B	: {N}((G^X)^Y)
+
+knowledge
+A	: A,B,G;
+B	: A,B,G;
+
+session_instances
+ [A:a,B:b,X:c,Y:d,N:e,G:f]
+;
+
+intruder_knowledge
+ a,b,f;
+
+goal
+ secrecy_of N [A];
+ secrecy_of N [B];
